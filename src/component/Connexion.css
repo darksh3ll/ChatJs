@@ -1,0 +1,21 @@
+.connexionBox{
+   background: url("https://actu.meilleurmobile.com/wp-content/uploads/2016/11/twitter.jpg") center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.connexion {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+button {
+    width: 100px;
+    background-color: #61dafb;
+    color: white;
+}

@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Formulaire from "./component/Formulaire";
+import Message from "./component/Message";
+
+//firebase
+//import base from "./component/base"
 
 class App extends Component {
+    state = {
+        messages:{},
+        pseudo:this.props.match.params.pseudo
+    };
+
+    addMessage = (message) => {
+        const messages = {...this.state.messages};//Copie du state
+        messages[`message-${Date.now()}`] = message;
+        this.setState({messages});
+
+};
+
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          <div className="messages">
+                <Message pseudo={this.state.pseudo}/>
+          </div>
+          <Formulaire
+            addMessage={this.addMessage}
+            pseudo={this.state.pseudo}
+          />
       </div>
     );
   }

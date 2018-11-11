@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Btn {
+    padding: 10px;
+    background:linear-gradient(135deg, #dfaffd 0%,#4e6ffb 100%);
+
+}
+
+.Btn:hover {
+   cursor: pointer;
+    background:linear-gradient(135deg, #ed6ea0 0%,#890717 100%);
+}
