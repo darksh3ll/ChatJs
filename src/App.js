@@ -9,7 +9,8 @@ import Message from "./component/Message";
 class App extends Component {
     state = {
         messages:{},
-        pseudo:this.props.match.params.pseudo
+        pseudo:this.props.match.params.pseudo,
+        arr:[12,23,65,98]
     };
 
     addMessage = (message) => {
@@ -21,10 +22,15 @@ class App extends Component {
 
 
   render() {
+
+
     return (
       <div className="App">
           <div className="messages">
-                <Message pseudo={this.state.pseudo}/>
+              {
+                  this.state.arr.map((x)=> <Message num={x}/>)
+              }
+
           </div>
           <Formulaire
             addMessage={this.addMessage}
